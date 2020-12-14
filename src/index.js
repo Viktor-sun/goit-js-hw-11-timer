@@ -43,10 +43,12 @@ const refs = {
 // ============================================
 
 class CountdownTimer {
-  constructor({ selector, targetDate }, objRefs) {
+  constructor({ selector, targetDate, refs: objRefs }) {
     this.selector = selector;
     this.targetDate = targetDate;
     this.objRefs = objRefs;
+
+    this.getTimer();
   }
   getTimer() {
     const currentTime = Date.now();
@@ -81,12 +83,10 @@ class CountdownTimer {
   }
 }
 
-const newYearTimer = new CountdownTimer(
-  {
-    selector: '#timer-1',
-    targetDate: new Date('January 1, 2021'),
-  },
+const newYearTimer = new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('January 1, 2021'),
   refs,
-);
+});
 
 newYearTimer.go();
