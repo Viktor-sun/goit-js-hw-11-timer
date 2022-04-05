@@ -85,7 +85,7 @@ class CountdownTimer {
 
 const newYearTimer = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('January 1, 2022'),
+  targetDate: new Date('January 1, 2023'),
   refs,
 });
 
